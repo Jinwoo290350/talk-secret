@@ -1,0 +1,22 @@
+//USE THIS CODE ON YOUR APPSCRIPT
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([data.field1, data.field2, data.field3]);
+  
+  // ส่งข้อมูลไปยัง LINE
+  var lineToken = 'Take the line notify token put it here';
+  var message = 'ข้อมูลได้รับการอัปเดต: ' + JSON.stringify(data);
+  UrlFetchApp.fetch('https://notify-api.line.me/api/notify', {
+    method: 'post',
+    headers: {
+      'Authorization': 'Bearer ' + lineToken
+    },
+    payload: {
+      'message': message
+    }
+  });
+  
+  return ContentService.createTextOutput('Success');
+}
+
