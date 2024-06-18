@@ -1,4 +1,6 @@
+JavaScript CODE
 //USE THIS CODE ON YOUR APPSCRIPT
+
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
