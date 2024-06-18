@@ -79,7 +79,7 @@ struct SwiftUIView: View {
     }
     
     func submitData() {
-        let url = URL(string: "https://script.google.com/macros/s/AKfycbx5CiNHu7KMZVk1z9gpw5Wga7vxYEoo9DxU0Aa5WMS8DsuaxPwB96SBZgD2UzDpbzhnUw/exec")!
+        let url = URL(string: "Create a web app in AppScript and put it here.")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
